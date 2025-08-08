@@ -3,10 +3,10 @@ import "./globals.css";
 import Image from "next/image";
 import DarkModeToggle from "./components/DarkModeToggle";
 import { Outfit } from "next/font/google";
-import Carousel from "./components/Carousel";
 
 const outfitFont = Outfit({
   variable: "--font-outfit",
+  subsets: ["latin"],
   weight: "300"
 });
 
