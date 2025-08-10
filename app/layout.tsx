@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         <header className="top-0 z-50 w-full border-b-base-300 border-b-2 flex justify-center">
-          <div className="flex items-center justify-between w-full px-3 py-3 max-w-10/12">
+          <div className="flex items-center justify-between w-full px-3 py-3 xl:max-w-10/12">
             <div className="flex items-center">
               <Image src={'/asrar-avatar-transparent.png'} alt="Asrar" width="54" height="54" className="rounded-full p-1 bg-white border-gray-200" />
               <div className={'ml-5 ' + outfitFont.className}>
