@@ -92,35 +92,104 @@ export default function Home() {
     }
   ];
 
-  const skills = {
-    core: [
-      { label: 'PHP', years: '15+'},
-      { label: 'MySQL', years: '15+'},
-      { label: 'JavaScript', years: '15+'},
-      { label: 'REST/APIs', years: '15+'},
-      { label: 'OOP', years: '15+'},
-    ],
-    modern: [
-      { label: 'React', years: '15+'},
-      { label: 'TypeScript', years: '15+'},
-      { label: 'Next.js', years: '15+'},
-      { label: 'Node.js', years: '15+'},
-    ],
-    tools: [
-      { label: 'AWS', years: '7'},
-      { label: 'Docker', years: '7'},
-      { label: 'Git, Subversion', years: '15+'},
-      { label: 'Serverless', years: '2'},
-      { label: 'Jira', years: '6'},
-      { label: 'CI/CD', years: '5'},
-    ],
-    professional: [
-      { label: 'Problem Solving' },
-      { label: 'System Architecture'},
-      { label: 'Clean, DRY Code' },
-      { label: 'User Experience'},
-    ],
-  };
+  const skills = [
+    {
+      label: 'PHP',
+      items: [
+        { label: 'PHP', years: '15+'},
+        { label: 'Laravel', years: '3'},
+        { label: 'Drupal 10+', years: '2'},
+        { label: 'CodeIgniter 3', years: '6'},
+        { label: 'CakePHP', years: '5'},
+        { label: 'Wordpress', years: '3'},
+        { label: 'Custom Frameworks', years: '6'},
+      ],
+    },
+    { label: 'JavaScript',
+      items: [
+        { label: 'JavaScript', years: '20+'},
+        { label: 'React', years: '6'},
+        { label: 'Node.js', years: '5'},
+        { label: 'TypeScript', years: '2'},
+        { label: 'Next.js', years: '1'},
+        { label: 'jQuery', years: '15+'},
+        { label: 'CK Editor', years: '13+'},
+      ],
+    },
+    {
+      label: 'Database',
+      items: [
+        { label: 'Database Design' },
+        { label: 'MySQL', years: '15+' },
+        { label: 'SQL Server', years: '5+' },
+        { label: 'MongoDB', years: '2' },
+        { label: 'Normalization' },
+        { label: 'EAV Pattern' },
+        { label: 'Performance Optimization' },
+      ],
+    },
+    {
+      label: 'AWS / Cloud',
+      items: [
+        { label: 'AWS S3', years: '5+' },
+        { label: 'AWS EC2', years: '5+' },
+        { label: 'AWS Lambda', years: '5+' },
+        { label: 'AWS RDS', years: '5+' },
+        { label: 'AWS EventBridge', years: '2+' },
+        { label: 'AWS Route 53', years: '2+' },
+        { label: 'Azure DevOps' },
+      ],
+    },
+    {
+      label: 'Tools & Platforms',
+      items: [
+        { label: 'VS Code', years: '6'},
+        { label: 'Docker', years: '7'},
+        { label: 'Git (cli)', years: '13'},
+        { label: 'GitHub / GitLab / Bitbucket'},
+        { label: 'ddev', years: '2'},
+        { label: 'Jira', years: '6'},
+        { label: 'Postman', years: '9'},
+      ],
+    },
+    {
+      label: 'Admin & DevOps',
+      items: [
+        { label: 'Linux terminal', years: '15'},
+        { label: 'Apache/Nginx', years: '13'},
+        { label: 'GitHub Actions', years: '2+'},
+        { label: 'CI/CD', years: '2'},
+        { label: 'DNS', years: '6'},
+        { label: 'npm', years: '6'},
+        { label: 'Serverless IaC', years: '2'},
+      ],
+    },
+    {
+      label: 'Markup & Styling',
+      items: [
+        { label: 'HTML/CSS', years: '15+'},
+        { label: 'Tailwind CSS', years: '2'},
+        { label: 'Bootstrap', years: '9'},
+        { label: 'SASS/SCSS', years: '5'},
+        { label: 'XML', years: '9'},
+        { label: 'Markdown', years: '3'},
+        { label: 'SEO Optimization', years: '3'},
+      ],
+    },
+    {
+      label: 'Architecture',
+      items: [
+        { label: 'Object Oriented Programming' },
+        { label: 'Design Patterns' },
+        { label: 'Test-Driven Development' },
+        { label: 'Problem Solving' },
+        { label: 'Clean, DRY Code' },
+        { label: 'SOLID Principles' },
+        { label: 'User Experience'},
+      ],
+    },
+
+  ];
 
   const interests = [
     '🪙 Cryptocurrency',
@@ -131,12 +200,35 @@ export default function Home() {
     '♟️ Chess'
   ];
 
+  const principles = [
+    {
+      title: "Don't Repeat Yourself",
+      description: "Write code once, reuse it everywhere. Duplication is the root of all evil."
+    },
+    {
+      title: "Keep It Simple",
+      description: "Complexity is the enemy. Aim for elegance through simplicity, not cleverness."
+    },
+    {
+      title: "Start with the End in Mind",
+      description: "Design before you code. Vision guides execution, not the other way around."
+    },
+    {
+      title: "Favour Convention over Configuration",
+      description: "Standards reduce cognitive load. Embrace patterns, avoid reinventing wheels."
+    },
+    {
+      title: "Remember: Everything is Possible",
+      description: "Constraints are opportunities in disguise. Never say never."
+    }
+  ];
+
   return (
     <div className={`${outfitFont.className}`}>
       {/* Hero Section */}
-      <section className="flex justify-center py-16 px-6 bg-gradient-to-br from-indigo-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+      <section className="flex justify-center py-16 px-6 bg-gradient-to-br from-white to-gray-100 dark:from-gray-950 dark:to-gray-900">
         <div className="max-w-4xl text-center">
-          <p className={`text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed ${baskervvilleFont.className}`}>
+          <p className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-700 dark:text-gray-300 mb-8 leading-relaxed ${baskervvilleFont.className}`}>
             I am a creative software developer committed to clean code, robust architecture
             and bringing immense value to the business, clients, and other devs.
           </p>
@@ -157,58 +249,27 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* Skills Section */}
-      <section className="flex justify-center py-16 px-6 bg-white dark:bg-gray-800">
+      <section className="flex justify-center py-16 px-6">
         <div className="max-w-6xl w-full">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Core Technologies */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className={`text-2xl font-bold text-gray-900 dark:text-white mb-4`}>
-                Core Technologies
-              </h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                {skills.core.map((skill, index) => { return (
-                  <li key={`skill-` + index}>{skill.label} ({skill.years} years)</li>
-                )})}
-              </ul>
-            </div>
-
-            {/* Modern Stack */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className={`text-2xl font-bold text-gray-900 dark:text-white mb-4`}>
-                Modern Stack
-              </h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                {skills.modern.map((skill, index) => { return (
-                  <li key={`skill-` + index}>{skill.label} ({skill.years} years)</li>
-                )})}
-
-              </ul>
-            </div>
-
-            {/* DevOps & Tools */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                DevOps & Tools
-              </h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                {skills.tools.map((skill, index) => { return (
-                  <li key={`skill-` + index}>{skill.label} ({skill.years} years)</li>
-                )})}
-              </ul>
-            </div>
-
-            {/* Professional Skills */}
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                Professional
-              </h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                {skills.professional.map((skill, index) => { return (
-                  <li key={`skill-` + index}>{skill.label}</li>
-                )})}
-              </ul>
-            </div>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+            Skills
+          </h2>
+          <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8`}>
+            {skills.map((skillCategory, index) => (
+              <div key={index} className={`p-6 rounded-lg shadow-md ${index % 2 === 0 ? 'bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800' : 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-800'}`}>
+                <h3 className={`text-2xl font-bold text-gray-900 dark:text-white mb-4`}>
+                  {skillCategory.label}
+                </h3>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  {skillCategory.items.map((skill, index) => { return (
+                    <li key={`skill-${index}`}>{skill.label} <span className="lg:hidden xl:inline text-sm text-gray-500 dark:text-gray-400">{skill.years ? `(${skill.years} years)` : ''}</span></li>
+                  )})}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -226,6 +287,24 @@ export default function Home() {
                 key={index}
                 {...job}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Principles Section */}
+      <section className="flex justify-center py-20 px-6 bg-white dark:bg-gray-900">
+        <div className="max-w-5xl w-full">
+          <div className="space-y-16">
+            {principles.map((principle, index) => (
+              <div key={index} className="text-center">
+                <h2 className={`text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-4 ${baskervvilleFont.className}`}>
+                  {principle.title}.
+                </h2>
+                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                  {principle.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
