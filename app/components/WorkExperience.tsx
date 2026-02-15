@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 
+interface Testimonial {
+  text: string;
+  name: string;
+  position: string;
+};
+
 interface WorkExperienceProps {
   title: string;
   company: string;
@@ -13,7 +19,7 @@ interface WorkExperienceProps {
   location: string;
   technologies?: string[];
   responsibilities: string[];
-  testimonials?: object[];
+  testimonials?: Testimonial[];
   highlight?: boolean;
 }
 
