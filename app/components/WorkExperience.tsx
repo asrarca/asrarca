@@ -5,7 +5,8 @@ import Image from "next/image";
 interface WorkExperienceProps {
   title: string;
   company: string;
-  companyLogo?: string|object;
+  companyLogo: string;
+  companyLogoIsSvg?: boolean;
   companyUrl?: string;
   period: string;
   duration?: string;
@@ -20,6 +21,7 @@ export default function WorkExperience({
   title,
   company,
   companyLogo,
+  companyLogoIsSvg = false,
   companyUrl,
   period,
   location,
@@ -28,21 +30,21 @@ export default function WorkExperience({
   testimonials,
   highlight = false
 }: WorkExperienceProps) {
-  const logoIsSvg = companyLogo && typeof companyLogo === 'object' && companyLogo.svgPath;
+
   return (
     <div className={`card bg-white dark:bg-gray-800 shadow-xl ${highlight ? 'border-2 border-blue-500' : ''}`}>
       <div className="card-body">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-          <div className={`mr-4 hidden md:block ${logoIsSvg ? "p-1" : ""}`}>
-              {companyLogo && (logoIsSvg) ? (
+          <div className={`mr-4 hidden md:block ${companyLogoIsSvg ? "p-1" : ""}`}>
+              {companyLogo && (companyLogoIsSvg) ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 36 36" fill="currentColor">
-                  <path d={companyLogo.svgPath} fillRule="evenodd"></path>
+                  <path d={companyLogo} fillRule="evenodd"></path>
                 </svg>
 
               ) : (
                 <Image
                   src={companyLogo}
-                  alt={`${companyLogo.substring(companyLogo.lastIndexOf('/') + 1).split('.')[0]} logo`}
+                  alt={`${companyLogo?.substring(companyLogo.lastIndexOf('/') + 1).split('.')[0]} logo`}
                   width={100}
                   height={100}
                   className="h-16 w-auto object-containrounded"
