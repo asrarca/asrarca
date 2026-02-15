@@ -1,25 +1,13 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import Image from "next/image";
 import DarkModeToggle from "./components/DarkModeToggle";
-import { Outfit, Baskervville } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-export const outfitFont = Outfit({
+const outfitFont = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: "300"
 });
 
-export const baskervvilleFont = Baskervville({
-  variable: "--font-baskervville",
-  subsets: ["latin"],
-  weight: ['400', '600']
-});
-
-export const metadata: Metadata = {
-  title: "Asrar Abbasi",
-  description: "I'm a Muslim, a hafiz, a Canadian, and a senior software developer. I'm also a hockey, Bitcoin and chocolate lover",
-};
 
 export default function RootLayout({
   children,

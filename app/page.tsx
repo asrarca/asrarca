@@ -1,6 +1,20 @@
 import "./globals.css";
-import { baskervvilleFont, outfitFont } from "./layout";
+
 import WorkExperience from "./components/WorkExperience";
+import { Outfit, Baskervville } from "next/font/google";
+
+const outfitFont = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: "300"
+});
+
+const baskervvilleFont = Baskervville({
+  variable: "--font-baskervville",
+  subsets: ["latin"],
+  weight: ['400', '600']
+});
+
 
 export default function Home() {
 
