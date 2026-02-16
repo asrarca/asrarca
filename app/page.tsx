@@ -115,7 +115,7 @@ export default function Home() {
         { label: 'CodeIgniter 3', years: '6'},
         { label: 'CakePHP', years: '5'},
         { label: 'Wordpress', years: '3'},
-        { label: 'Custom Frameworks', years: '6'},
+        { label: 'Composer', years: '10'},
       ],
     },
     { label: 'JavaScript',
@@ -130,7 +130,7 @@ export default function Home() {
       ],
     },
     {
-      label: 'Database',
+      label: 'Databases',
       items: [
         { label: 'Database Design' },
         { label: 'MySQL', years: '15+' },
@@ -172,7 +172,7 @@ export default function Home() {
         { label: 'Apache/Nginx', years: '13'},
         { label: 'GitHub Actions', years: '2+'},
         { label: 'CI/CD', years: '2'},
-        { label: 'DNS', years: '6'},
+        { label: 'Code Reviews', years: '6'},
         { label: 'npm', years: '6'},
         { label: 'Serverless IaC', years: '2'},
       ],
