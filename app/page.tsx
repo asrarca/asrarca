@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import WorkExperience from "./components/WorkExperience";
+import PullQuoteCarousel from "./components/PullQuoteCarousel";
 import { Outfit, Baskervville } from "next/font/google";
 
 const outfitFont = Outfit({
@@ -32,6 +33,13 @@ export default function Home() {
         "Code optimization, bug fixes and site maintenance with Drupal 10 (bombardier.com).",
         "Performing code reviews for other developers.",
         "Demoed fixes and enhancements directly to the client."
+      ],
+      testimonials: [
+        {
+          name: 'Francis Lacerte',
+          position: 'Senior Software Developer, Givecloud',
+          text: "It was a pleasure working with Asrar. Anyone who gets the chance to know him is winning.",
+        },
       ]
     },
     {
@@ -236,6 +244,39 @@ export default function Home() {
     }
   ];
 
+  const pullQuotes = [
+    {
+      text: "Asrar could always see the forest for the trees which made him so valuable to me.",
+      name: "Pat Yoshida",
+      position: "PMO Director, Fastco Canada"
+    },
+    {
+      text: "Asrar's code is efficient, clean, modular, comprehensive and speaks for itself. ",
+      name: "Musab Mirza",
+      position: "Certified Kubernetes Application Developer"
+    },
+    {
+      text: "Any team would be fortunate to have someone of Asrar’s caliber and integrity.",
+      name: "Paul Chow",
+      position: "Former Head of Technology, BCA Research"
+    },
+    {
+      text: "Asrar is an exceptional mentor who taught me invaluable lessons in writing clean, efficient code and applying robust architectural designs.",
+      name: "Maria Parra",
+      position: "Senior Developer, BCA Research"
+    },
+    {
+      text: "Asrar's deep grasp of PHP, object-oriented design and architectural principles is something I've always admired.",
+      name: "Arshdeep Singh",
+      position: "Tech Lead, BCA Research"
+    },
+    {
+      text: "Asrar's passion, technical acumen, and collaborative spirit make him an invaluable asset to any team.",
+      name: "Badi Haddadin",
+      position: "Senior System Administrator, BCA Research"
+    },
+  ];
+
   return (
     <div className={`${outfitFont.className}`}>
       {/* Hero Section */}
@@ -304,6 +345,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Pull Quote Carousel */}
+      <PullQuoteCarousel pullQuotes={pullQuotes} fontClassName={baskervvilleFont.className} />
 
       {/* Principles Section */}
       <section className="flex justify-center py-20 px-6 bg-white dark:bg-gray-900">
