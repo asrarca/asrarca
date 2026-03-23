@@ -93,17 +93,39 @@ export default function Home() {
 
       {/* Principles Section */}
       <section className="flex justify-center py-20 px-6 bg-white dark:bg-gray-900">
-        <div className="max-w-5xl w-full">
-          <div className="space-y-16">
+        <div className="max-w-6xl w-full">
+          <div className="mb-12">
+            <p className="text-sm uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 mb-3">
+              Engineering Mindset
+            </p>
+            <h2 className={`text-4xl md:text-5xl text-gray-900 dark:text-white mb-4 ${baskervvilleFont.className}`}>
+              Principles I Adhere To
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl">
+              These principles guide how I design systems, review code, and collaborate with teams.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {principles.map((principle, index) => (
-              <div key={index} className="text-center">
-                <h2 className={`text-xl md:text-xl lg:text-2xl text-gray-900 dark:text-white mb-4 ${baskervvilleFont.className}`}>
-                  {principle.title}.
-                </h2>
-                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                  {principle.description}
-                </p>
-              </div>
+              <article
+                key={index}
+                className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-7 shadow-sm"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-semibold">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className={`text-2xl text-gray-900 dark:text-white mb-2 ${baskervvilleFont.className}`}>
+                      {principle.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {principle.description}
+                    </p>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </div>
