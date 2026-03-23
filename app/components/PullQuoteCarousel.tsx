@@ -1,12 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
-interface PullQuote {
-  text: string;
-  name: string;
-  position: string;
-}
+import type { PullQuote } from '../data';
 
 interface PullQuoteCarouselProps {
   pullQuotes: PullQuote[];

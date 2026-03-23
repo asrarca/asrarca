@@ -1,27 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
-interface Testimonial {
-  text: string;
-  name: string;
-  position: string;
-};
-
-interface WorkExperienceProps {
-  title: string;
-  company: string;
-  companyLogo: string;
-  companyLogoIsSvg?: boolean;
-  companyUrl?: string;
-  period: string;
-  duration?: string;
-  location: string;
-  technologies?: string[];
-  responsibilities: string[];
-  testimonials?: Testimonial[];
-  highlight?: boolean;
-}
+import type { WorkExperienceItem } from "../data";
 
 export default function WorkExperience({
   title,
@@ -35,7 +15,7 @@ export default function WorkExperience({
   responsibilities,
   testimonials,
   highlight = false
-}: WorkExperienceProps) {
+}: WorkExperienceItem) {
 
   return (
     <div className={`card bg-white dark:bg-gray-800 shadow-xl ${highlight ? 'border-2 border-blue-500' : ''}`}>
