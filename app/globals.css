@@ -4,18 +4,72 @@
 }
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* Feature Deck — used for all display headings */
+@font-face {
+  font-family: 'Feature Deck';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/FeatureDeck-Regular.7670de48.woff2') format('woff2');
+}
+
+/* Design palette — light (default) */
+:root {
+  --c-bg: #ffffff;
+  --c-bg-alt: oklch(97.5% 0.003 75);
+  --c-nav-bg: rgba(255, 255, 255, 0.85);
+  --c-fg: oklch(17% 0.014 60);
+  --c-muted: oklch(42% 0.018 60);
+  --c-border: oklch(88% 0.01 60);
+  --c-card-bg: oklch(98% 0.003 75);
+  --c-accent: oklch(55% 0.20 25);
+  --c-accent-hover: oklch(48% 0.20 25);
+  --c-panel-bg: oklch(14% 0.01 60);
+  --c-panel-fg: oklch(97% 0.006 75);
+  --c-panel-muted: oklch(72% 0.016 60);
+  /* dark-mode toggle */
+  --c-track: oklch(88% 0.01 60);
+  --c-knob: #ffffff;
+}
+
+/* Design palette — dark */
+[data-theme='dark'] {
+  --c-bg: oklch(17% 0.012 60);
+  --c-bg-alt: oklch(21% 0.014 60);
+  --c-nav-bg: oklch(17% 0.012 60 / 0.85);
+  --c-fg: oklch(95% 0.006 75);
+  --c-muted: oklch(68% 0.018 60);
+  --c-border: oklch(34% 0.018 60);
+  --c-card-bg: oklch(22% 0.014 60);
+  --c-panel-bg: oklch(12% 0.012 60);
+  --c-track: var(--c-accent);
+  --c-knob: oklch(97% 0.006 75);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 10px;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-ibm-plex-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
-.home-carousel {
-  display:inline-block;
-  min-width:250px;
+::selection {
+  background: oklch(55% 0.20 25);
+  color: white;
 }
 
-.home-carousel li {
-  min-height: 40px;
+/* Font utilities driven by @font-face and next/font variables */
+.font-display {
+  font-family: 'Feature Deck', serif;
+  font-weight: 400;
+}
+
+.font-code {
+  font-family: var(--font-ibm-plex-mono), monospace;
 }

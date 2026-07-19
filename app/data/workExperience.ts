@@ -21,9 +21,9 @@ export const workExperience: WorkExperienceItem[] = [
       "AngularJS",
     ],
     responsibilities: [
-      "Code optimization, bug fixes and site maintenance with Drupal 10 (bombardier.com).",
-      "Performing code reviews for other developers.",
-      "Demoed fixes and enhancements directly to the client.",
+      "Handled code optimization, bug fixes, and ongoing site maintenance on a Drupal 10 platform powering bombardier.com.",
+      "Performed thorough code reviews for other developers on the team, helping maintain quality and consistency across the codebase.",
+      "Demoed fixes and enhancements directly to the client, walking them through each change and gathering their feedback.",
     ],
     testimonials: [
       {
@@ -55,11 +55,11 @@ export const workExperience: WorkExperienceItem[] = [
       "Jira",
     ],
     responsibilities: [
-      "Architected and led the consolidation of a dozen separate PHP sites into one multi-site using an object-oriented approach, resulting in a reduction of the codebase by 80%, while simultaneously increasing its performance, flexibility and maintainability.",
-      "Created various REST APIs with proper method usage (GET, POST, PUT, DELETE).",
-      "Integrating with the SendGrid API, I created a robust email system with microservices using Node.js and AWS (Lambda, API Gateway, EventBridge, RDS), with a user-friendly interface developed in React + TypeScript.",
-      "Voted by colleagues as the \"most appreciated player\" in October 2024 through an anonymous survey, recognizing my creative ideas and outstanding work.",
-      "Performed code reviews, optimized SQL queries, mentored junior developers.",
+      "Architected and led the consolidation of a dozen separate PHP sites into a single object-oriented multi-site platform, cutting the overall codebase by 80% while simultaneously improving performance, flexibility, and long-term maintainability.",
+      "Designed and built a range of REST APIs, applying HTTP methods correctly and consistently across GET, POST, PUT, and DELETE operations.",
+      "Built a robust, microservice-based email system on Node.js and AWS (Lambda, API Gateway, EventBridge, and RDS), integrated with the SendGrid API and paired with an intuitive front-end interface written in React and TypeScript.",
+      "Was voted \"most appreciated player\" by my colleagues in October 2024 through an anonymous company survey, recognized for my creative ideas and consistently strong work.",
+      "Regularly performed code reviews, optimized SQL queries for performance, and mentored junior developers as they grew into their roles.",
     ],
     highlight: false,
     testimonials: [
@@ -106,9 +106,9 @@ export const workExperience: WorkExperienceItem[] = [
       "jQuery",
     ],
     responsibilities: [
-      "Led backend and frontend development of B2B e-commerce sites for SMEs, with complex tiered pricing, role-based access, large-scale EDI processing, automated monitoring, internal tools, and Elasticsearch-powered search.",
-      "Developed object-oriented enhancements to our proprietary PHP framework, IgnitionWeb, ensuring clear separation of core modules from custom modules.",
-      "I collaborated closely with PMs, wrote documentation, performed code reviews, optimized performance, interviewed candidates and mentored new developers.",
+      "Led both backend and frontend development of B2B e-commerce sites for small and mid-sized businesses, delivering complex tiered pricing, role-based access control, large-scale EDI processing, automated monitoring, internal tooling, and Elasticsearch-powered search.",
+      "Developed object-oriented enhancements to our proprietary PHP framework, IgnitionWeb, establishing a clean separation between core modules and client-specific custom modules.",
+      "Collaborated closely with project managers, wrote clear documentation, performed code reviews, optimized performance, interviewed candidates, and mentored new developers joining the team.",
     ],
     testimonials: [
       {

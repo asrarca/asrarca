@@ -5,10 +5,9 @@ import type { PullQuote } from '../data';
 
 interface PullQuoteCarouselProps {
   pullQuotes: PullQuote[];
-  fontClassName: string;
 }
 
-export default function PullQuoteCarousel({ pullQuotes, fontClassName }: PullQuoteCarouselProps) {
+export default function PullQuoteCarousel({ pullQuotes }: PullQuoteCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
@@ -83,48 +82,41 @@ export default function PullQuoteCarousel({ pullQuotes, fontClassName }: PullQuo
   const currentQuote = pullQuotes[currentIndex];
 
   return (
-    <section className="flex justify-center py-16 px-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 min-h-[480px]">
-      <div className="max-w-4xl w-full text-center relative">
+    <section className="flex justify-center bg-[var(--c-bg-alt)] px-10 py-24">
+      <div className="max-w-3xl w-full text-center relative">
+        <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-10">
+          What people say
+        </div>
         <div
-          className="overflow-hidden relative touch-pan-y"
+          className="overflow-hidden relative touch-pan-y min-h-[220px]"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <svg className="absolute -top-4 left-0 w-18 h-18 text-gray-300 dark:text-gray-600 opacity-50" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M10 8c-3.3 0-6 2.7-6 6v10h8V14h-4c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h8V14h-4c0-2.2 1.8-4 4-4V8z"/>
-          </svg>
-
           <div
             className={`transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-x-8' : 'opacity-100 translate-x-0'}`}
           >
-            <blockquote className={`text-2xl md:text-3xl lg:text-4xl text-gray-800 dark:text-gray-200 mb-6 leading-relaxed ${fontClassName}`}>
+            <blockquote className="font-display italic text-2xl md:text-3xl leading-relaxed text-[var(--c-fg)] mb-8">
               &ldquo;{currentQuote.text}&rdquo;
             </blockquote>
-            <cite className="text-lg md:text-xl text-gray-700 dark:text-gray-300 not-italic">
-              — {currentQuote.name}
-              <div className="text-md text-gray-500 dark:text-gray-400">{currentQuote.position}</div>
+            <cite className="font-code text-[13px] not-italic text-[var(--c-muted)]">
+              {currentQuote.name} · {currentQuote.position}
             </cite>
           </div>
-
-          <svg className="absolute -bottom-4 right-0 w-18 h-18 text-gray-300 dark:text-gray-600 opacity-50 rotate-180" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M10 8c-3.3 0-6 2.7-6 6v10h8V14h-4c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h8V14h-4c0-2.2 1.8-4 4-4V8z"/>
-          </svg>
         </div>
 
-        {/* Carousel Indicators */}
         {pullQuotes.length > 1 && (
-          <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-10">
             {pullQuotes.map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
                   transitionToIndex((prevIndex) => (prevIndex === index ? prevIndex : index));
                 }}
-                className={`w-4 h-4 cursor-pointer rounded-full transition-all duration-300 ${
+                className={`h-3 cursor-pointer rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-gray-600 dark:bg-gray-300 w-8'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                    ? 'bg-[var(--c-accent)] w-6'
+                    : 'bg-[var(--c-border)] w-3 hover:bg-[var(--c-muted)]'
                 }`}
                 aria-label={`Go to quote ${index + 1}`}
               />

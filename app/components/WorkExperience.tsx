@@ -1,103 +1,58 @@
-"use client";
-
-import Image from "next/image";
 import type { WorkExperienceItem } from "../data";
+import JobTestimonials from "./JobTestimonials";
 
 export default function WorkExperience({
   title,
   company,
-  companyLogo,
-  companyLogoIsSvg = false,
   companyUrl,
   period,
-  location,
   technologies,
   responsibilities,
   testimonials,
-  highlight = false
 }: WorkExperienceItem) {
 
   return (
-    <div className={`card bg-white dark:bg-gray-800 shadow-xl ${highlight ? 'border-2 border-blue-500' : ''}`}>
-      <div className="card-body">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-          <div className={`mr-4 hidden md:block ${companyLogoIsSvg ? "p-1" : ""}`}>
-              {companyLogo && (companyLogoIsSvg) ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 36 36" fill="currentColor">
-                  <path d={companyLogo} fillRule="evenodd"></path>
-                </svg>
+    <div className="relative pl-8 border-l-2 border-[var(--c-border)] pb-14 last:pb-0">
+      <span className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[var(--c-accent)] border-[3px] border-[var(--c-bg)]" />
 
-              ) : (
-                <Image
-                  src={companyLogo}
-                  alt={`${companyLogo?.substring(companyLogo.lastIndexOf('/') + 1).split('.')[0]} logo`}
-                  width={100}
-                  height={100}
-                  className="h-16 w-auto object-containrounded"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              ) }
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+        <a href={companyUrl} target="_blank" rel="noopener" className="font-display text-[26px] text-[var(--c-fg)] hover:text-[var(--c-accent)] transition-colors">{company}</a>
+      </div>
+
+      <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-10">
+        {/* Left — description paragraphs */}
+        <div className="flex flex-col gap-4">
+          <div className="font-code text-[14px] text-[var(--c-accent)]">
+            <span className="font-semibold ">{title}</span>
+            <span className="ml-3 font-code text-xs text-[var(--c-muted)] whitespace-nowrap">{period}</span>
           </div>
 
-          <div className="flex-1">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h3>
-            <div className="flex items-center gap-3 mt-2">
-              <a href={companyUrl} className="text-xl text-blue-600 dark:text-blue-400 font-semibold" target="_blank">{company}</a>
-            </div>
-          </div>
-          <div className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
-            <p className="font-semibold">{period}</p>
-            <p>{location}</p>
-          </div>
+          {responsibilities.map((paragraph, index) => (
+            <p key={index} className="text-[16px] leading-relaxed text-[var(--c-muted)] max-w-[68ch]">
+              {paragraph}
+            </p>
+          ))}
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_350px] gap-4">
-          <div>
-            {technologies && technologies.length > 0 && (
-              <div className="mb-4 md:ml-2">
-                <p className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2 lg:text-sm">Technologies Used</p>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="badge badge-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-0"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <ul className="list-disc list-outside space-y-2 text-gray-700 dark:text-gray-300 ml-6">
-              {responsibilities.map((responsibility, index) => (
-                <li
+        {/* Right — skills + testimonials */}
+        <div className="flex flex-col gap-6">
+          {technologies && technologies.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {technologies.map((tech, index) => (
+                <span
                   key={index}
-                  className={'text-lg mb-4'}
+                  className="font-code text-[11px] text-[var(--c-muted)] border border-[var(--c-border)] px-2.5 py-1 rounded-full"
                 >
-                  {responsibility}
-                </li>
+                  {tech}
+                </span>
               ))}
-            </ul>
-          </div>
-          {testimonials && testimonials.length > 0 && (
+            </div>
+          )}
 
-              <div className="mt-4 lg:ml-20">
-                <p className="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2 lg:text-sm">Testimonials</p>
-                <ul className="list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                  {testimonials.map((testimonial, index) => (
-                    <li key={index} className="text-md mb-8">
-                      <p className="font-bold">&quot;{testimonial.text}&quot;</p>
-                      <p className="text-gray-600 dark:text-gray-400">{testimonial.name}<br/>{testimonial.position}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {testimonials && testimonials.length > 0 && (
+            <JobTestimonials testimonials={testimonials} />
           )}
         </div>
-
       </div>
     </div>
   );
