@@ -13,9 +13,8 @@ export default function WorkExperience({
 
   return (
     <div className="relative pl-8 border-l-2 border-[var(--c-border)] pb-14 last:pb-0">
-      <span className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[var(--c-accent)] border-[3px] border-[var(--c-bg)]" />
-
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+      <div className="relative flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+        <span className="absolute -left-[39px] top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[var(--c-accent)] border-[3px] border-[var(--c-bg)]" />
         <a href={companyUrl} target="_blank" rel="noopener" className="font-display text-[26px] text-[var(--c-fg)] hover:text-[var(--c-accent)] transition-colors">{company}</a>
       </div>
 
