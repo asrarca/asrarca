@@ -22,8 +22,19 @@
   --c-muted: oklch(42% 0.018 60);
   --c-border: oklch(88% 0.01 60);
   --c-card-bg: oklch(98% 0.003 75);
-  --c-accent: oklch(55% 0.20 25);
-  --c-accent-hover: oklch(48% 0.20 25);
+
+  /* ┌─────────────────────────────────────────────────────────┐
+     │  ACCENT COLOR — change this one value to re-theme the    │
+     │  entire site. Everything below derives from it.          │
+     └─────────────────────────────────────────────────────────┘ */
+  --c-accent: oklch(69.624% 0.19933 38.767);
+  /* Darker shade used on hover (buttons, links) */
+  --c-accent-hover: color-mix(in oklab, var(--c-accent), black 14%);
+  /* Faded shade used for large decorative numbers */
+  --c-accent-soft: color-mix(in oklab, var(--c-accent) 35%, transparent);
+  /* Grayish accent used for header icons (accent at reduced opacity) */
+  --c-accent-icon: color-mix(in oklab, var(--c-accent) 60%, transparent);
+
   --c-panel-bg: oklch(14% 0.01 60);
   --c-panel-fg: oklch(97% 0.006 75);
   --c-panel-muted: oklch(72% 0.016 60);
@@ -60,7 +71,7 @@ body {
 }
 
 ::selection {
-  background: oklch(55% 0.20 25);
+  background: var(--c-accent);
   color: white;
 }
 

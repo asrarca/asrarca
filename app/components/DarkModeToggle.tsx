@@ -38,7 +38,7 @@ const DarkModeToggle: React.FC = () => {
         type="button"
         onClick={toggleTheme}
         aria-label="Toggle dark mode"
-        className="relative text-gray-500 inline-flex items-center justify-center dark:text-gray-400 hover:bg-gray-100 w-10 h-10 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 cursor-pointer"
+        className="relative text-[var(--c-accent-icon)] hover:text-[var(--c-accent)] inline-flex items-center justify-center hover:bg-gray-100 w-10 h-10 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 cursor-pointer"
       >
         <span className="relative block w-4 h-4">
           {/* Moon — shown in light mode (click to go dark) */}

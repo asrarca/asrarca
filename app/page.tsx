@@ -62,7 +62,7 @@ export default function Home() {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-px bg-[var(--c-border)] border border-[var(--c-border)]">
             {principles.map((principle, index) => (
               <div key={index} className="bg-[var(--c-bg)] p-8">
-                <div className="font-code text-[32px] font-semibold text-[oklch(55%_0.20_25_/_0.35)] mb-3.5">
+                <div className="font-code text-[32px] font-semibold text-[var(--c-accent-soft)] mb-3.5">
                   {String(index + 1).padStart(2, "0")}
                 </div>
                 <h3 className="font-display text-lg text-[var(--c-fg)] mb-2.5">{principle.title}</h3>
