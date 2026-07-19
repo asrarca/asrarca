@@ -29,8 +29,8 @@ export default function RootLayout({
           <div className="flex items-center gap-3 flex-shrink-0">
             <Image src={'/asrar-avatar-transparent.png'} alt="Asrar" width="44" height="44" className="w-11 h-11 rounded-full p-0.5 bg-white ring-1" />
             <a href="#home" className="flex flex-col gap-0.5">
-              <span className="font-display text-lg leading-tight text-[var(--c-fg)]">Asrar Abbasi</span>
-              <span className="font-code text-[11px] tracking-wide text-[var(--c-muted)]">Senior Software Developer</span>
+              <span className="font-display text-xl leading-tight text-[var(--c-fg)]">Asrar Abbasi</span>
+              <span className="font-code text-[13px] tracking-wide text-[var(--c-muted)]">Senior Software Developer</span>
             </a>
           </div>
           <div className="flex items-center">

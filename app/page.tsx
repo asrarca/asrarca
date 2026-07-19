@@ -4,7 +4,13 @@ import WorkExperience from "./components/WorkExperience";
 import PullQuoteCarousel from "./components/PullQuoteCarousel";
 import { workExperience, principles, pullQuotes } from "./data";
 
-const topSkills = ["PHP", "TypeScript", "AWS"];
+const topSkills = [
+  { title: "PHP", detail: "Drupal, Laravel" },
+  { title: "TypeScript", detail: "React, Next.js" },
+  { title: "DB", detail: "MySQL, SQL Server" },
+  { title: "AWS", detail: "EC2, RDS, S3, Route53" },
+  { title: "DevOps", detail: "Linux, Docker, CI/CD" },
+];
 
 const education = [
   { program: "Computer Applications Programming", school: "Concordia University", location: "Montreal, QC", year: "1999" },
@@ -18,20 +24,21 @@ export default function Home() {
       <section id="home" className="max-w-[1100px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1.7fr_0.7fr] gap-10 md:gap-16 items-start pt-14 pb-20 md:pt-24">
         <div>
           <h1 className="font-display text-[clamp(40px,6vw,68px)] leading-[1.06] text-[var(--c-fg)] mb-6 text-pretty">
-            Spiral out. Keep going.
+            Spiral out.
           </h1>
           <p className="text-[19px] leading-[1.7] text-[var(--c-muted)] max-w-[56ch] mb-8 text-pretty">
-            Growth isn&rsquo;t a straight line. It&rsquo;s a loop: circling back to the same problems with a
-            wider view each time. Iteration allows us the opportunity to explore
+            Growth is never a straight line. It&rsquo;s a spiral, circling back to the same problems with a
+            wider understanding each time. Iteration allows us the opportunity to explore
             and to keep learning. That&rsquo;s how I&rsquo;ve spent my
             career — seeking better solutions, gaining sharper instincts and challenging the status quo.
           </p>
+
           <div className="flex flex-wrap gap-3.5 mb-9">
             <a href="#experience" className="font-code bg-[var(--c-accent)] hover:bg-[var(--c-accent-hover)] text-white px-7 py-3.5 rounded-lg font-semibold text-sm transition-colors">
               See my work
             </a>
             <a href="#contact" className="font-code border-[1.5px] border-[var(--c-border)] hover:border-[var(--c-accent)] hover:text-[var(--c-accent)] text-[var(--c-fg)] px-7 py-3 rounded-lg font-semibold text-sm transition-colors">
-              Get in touch
+              Spiral Out
             </a>
           </div>
           <div className="flex flex-wrap gap-4 font-code text-[13px] text-[var(--c-muted)]">
@@ -45,9 +52,12 @@ export default function Home() {
           <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">Top Skills</div>
           <div className="flex flex-col">
             {topSkills.map((skill, index) => (
-              <div key={index} className="flex items-center gap-3 py-3.5 border-b border-[var(--c-border)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-accent)] flex-shrink-0" />
-                <span className="font-display text-[19px] text-[var(--c-fg)]">{skill}</span>
+              <div key={index} className="flex items-baseline gap-3 py-3.5 border-b border-[var(--c-border)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-accent)] flex-shrink-0 self-center" />
+                <span className="font-display text-[19px] text-[var(--c-fg)]">{skill.title}</span>
+                {skill.detail && (
+                  <span className="font-code text-[13px] text-[var(--c-muted)] md:hidden lg:inline">{skill.detail}</span>
+                )}
               </div>
             ))}
           </div>
@@ -135,7 +145,7 @@ export default function Home() {
             </p>
           </div>
 
-          <p className="font-display italic text-sm text-[var(--c-panel-muted)] mb-3">Spiral out, keep going.</p>
+          <p className="font-display italic text-sm text-[var(--c-panel-muted)] mb-3">Spiral out. Keep going.</p>
           <p className="font-code text-[11px] text-white/45">
             &copy; {new Date().getFullYear()} Asrar Abbasi. All rights reserved.
           </p>
