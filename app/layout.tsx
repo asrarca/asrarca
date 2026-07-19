@@ -24,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body className="antialiased">
-        <nav className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-x-5 gap-y-3.5 px-5 py-3.5 md:px-10 bg-[var(--c-nav-bg)] backdrop-blur-md border-b border-[var(--c-border)]">
+        <nav className="sticky top-0 z-50 bg-[var(--c-nav-bg)] backdrop-blur-md border-b border-[var(--c-border)]">
+          <div className="max-w-[1180px] mx-auto px-6 md:px-10 py-3.5 flex flex-wrap items-center justify-between gap-x-5 gap-y-3.5">
           <div className="flex items-center gap-3 flex-shrink-0">
             <Image src={'/asrar-avatar-transparent.png'} alt="Asrar" width="44" height="44" className="w-11 h-11 rounded-full p-0.5 bg-white ring-1 ring-[var(--c-border)]" />
             <a href="#home" className="flex flex-col gap-0.5">
@@ -57,6 +58,7 @@ export default function RootLayout({
               <span className="sr-only">X / Twitter</span>
             </a>
             <DarkModeToggle />
+          </div>
           </div>
         </nav>
         {children}

@@ -22,8 +22,8 @@ export default function Home() {
           </h1>
           <p className="text-[19px] leading-[1.7] text-[var(--c-muted)] max-w-[56ch] mb-8 text-pretty">
             Growth isn&rsquo;t a straight line. It&rsquo;s a loop: circling back to the same problems with a
-            wider view each time. Iteration allows us the opportunity to explore,
-            to get it wrong, and to keep learning. That&rsquo;s how I&rsquo;ve spent my
+            wider view each time. Iteration allows us the opportunity to explore
+            and to keep learning. That&rsquo;s how I&rsquo;ve spent my
             career — seeking better solutions, gaining sharper instincts and challenging the status quo.
           </p>
           <div className="flex flex-wrap gap-3.5 mb-9">
