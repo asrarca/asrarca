@@ -1,8 +1,9 @@
 import "./globals.css";
 
+import AppCard from "./components/AppCard";
 import WorkExperience from "./components/WorkExperience";
 import PullQuoteCarousel from "./components/PullQuoteCarousel";
-import { workExperience, principles, pullQuotes } from "./data";
+import { workExperience, principles, pullQuotes, apps } from "./data";
 
 const topSkills = [
   { title: "PHP", detail: "Drupal, Laravel" },
@@ -64,10 +65,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Built */}
+      <section id="built" className="border-t border-[var(--c-border)] px-6 md:px-10 py-24">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">01 / Side Projects</div>
+          <h2 className="font-display text-[clamp(28px,4vw,40px)] text-[var(--c-fg)] mb-12">Things I&rsquo;ve built</h2>
+          <div className="flex flex-wrap justify-center gap-10">
+            {apps.map((app, index) => (
+              <AppCard key={index} {...app} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Principles */}
       <section id="principles" className="bg-[var(--c-bg-alt)] px-6 md:px-10 py-24">
         <div className="max-w-[1100px] mx-auto">
-          <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">01 / Engineering Mindset</div>
+          <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">02 / Engineering Mindset</div>
           <h2 className="font-display text-[clamp(28px,4vw,40px)] text-[var(--c-fg)] mb-12">Principles I adhere to</h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-px bg-[var(--c-border)] border border-[var(--c-border)]">
             {principles.map((principle, index) => (
@@ -85,7 +99,7 @@ export default function Home() {
 
       {/* Experience */}
       <section id="experience" className="max-w-[1100px] mx-auto px-6 md:px-10 py-24">
-        <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">02 / Experience</div>
+        <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">03 / Experience</div>
         <h2 className="font-display text-[clamp(28px,4vw,40px)] text-[var(--c-fg)] mb-12">Professional Experience</h2>
         {workExperience.map((job, index) => (
           <WorkExperience key={index} {...job} />
@@ -97,7 +111,7 @@ export default function Home() {
 
       {/* Education */}
       <section id="education" className="max-w-[1100px] mx-auto px-6 md:px-10 py-24">
-        <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">03 / Education</div>
+        <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">04 / Education</div>
         <h2 className="font-display text-[clamp(28px,4vw,40px)] text-[var(--c-fg)] mb-10">Education</h2>
         <div className="flex flex-col gap-5">
           {education.map((ed, index) => (
@@ -115,7 +129,7 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="bg-[var(--c-panel-bg)] px-6 md:px-10 pt-24 pb-16">
         <div className="max-w-[700px] mx-auto text-center">
-          <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">04 / Contact</div>
+          <div className="font-code text-xs tracking-[0.1em] uppercase text-[var(--c-accent)] mb-4">05 / Contact</div>
           <h2 className="font-display text-[clamp(30px,5vw,44px)] text-[var(--c-panel-fg)] mb-5">Let&rsquo;s build something.</h2>
           <p className="text-[17px] leading-[1.7] text-[var(--c-panel-muted)] mb-7">
             Open to interesting problems, good teams, and the occasional chess challenge.

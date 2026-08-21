@@ -38,6 +38,15 @@ export interface Principle {
   description: string;
 }
 
+export interface App {
+  name: string;
+  url: string;
+  icon: string;
+  tagline: string;
+  description: string;
+  technologies?: string[];
+}
+
 export interface PullQuote {
   text: string;
   name: string;
